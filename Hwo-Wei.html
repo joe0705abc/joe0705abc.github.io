@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>黃皓暐 Hao-Wei Huang | Portfolio</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap');
+
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #2563eb, #14b8a6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.85);
+        }
+
+
+
+        .project-tab {
+            padding: 0.75rem 1.25rem;
+            border-radius: 9999px;
+            border: 1px solid rgb(226 232 240);
+            background: white;
+            color: rgb(71 85 105);
+            font-weight: 600;
+            transition: all 0.25s ease;
+        }
+
+        .project-tab:hover {
+            background: rgb(248 250 252);
+            border-color: rgb(148 163 184);
+        }
+
+        .project-tab.active {
+            background: rgb(15 23 42);
+            color: white;
+            border-color: rgb(15 23 42);
+        }
+
+        #project-card {
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+
+        #project-card.switching {
+            opacity: 0;
+            transform: translateY(8px);
+        }
+    </style>
+
+</head>
+
+<body class="bg-slate-50 text-slate-900 antialiased">
+
+    <!-- 導覽列 -->
+    <nav class="fixed top-0 w-full z-50 bg-white/85 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between"> <span
+                class="text-2xl font-bold tracking-tight text-slate-800">
+                Hao-Wei<span class="text-blue-600">.</span>
+            </span>
+
+            <div class="hidden md:flex space-x-8 text-base font-medium">
+                <a href="#about" class="hover:text-blue-600 transition">關於我</a>
+                <a href="#skills" class="hover:text-blue-600 transition">技能</a>
+                <a href="#projects" class="hover:text-blue-600 transition">專案</a>
+                <a href="#experience" class="hover:text-blue-600 transition">經歷</a>
+                <a href="#research" class="hover:text-blue-600 transition">補充資訊</a>
+            </div>
+
+            <a href="mailto:joehuang0705xx@gmail.com"
+                class="bg-slate-900 text-white px-5 py-2.5 rounded-full text-sm md:text-base font-medium hover:bg-slate-800 transition">
+                聯絡我
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-36 pb-16 px-5">
+        <div class="max-w-6xl mx-auto flex flex-col items-center text-center">
+            <div class="w-36 h-36 rounded-full bg-gradient-to-tr from-blue-500 to-teal-400 p-1 mb-7 shadow-lg">
+                <div class="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
+            <img src="https://joe0705abc.github.io/head.jpg" alt="黃皓暐頭貼" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-5 tracking-tight leading-tight">
+                你好，我是 <span class="gradient-text">黃皓暐</span>
+            </h1>
+
+            <p class="text-xl md:text-2xl text-slate-600 mb-8 max-w-3xl leading-relaxed">
+                國立中正大學醫療資訊管理碩士生，專注於
+                <span class="font-semibold text-slate-800">AI 應用、資料分析與 Web 系統開發</span>，
+                持續將技術能力結合醫療資訊、研究專題與實務場景。
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://github.com/joe0705abc" target="_blank"
+                    class="flex items-center gap-2 bg-white border border-slate-200 px-6 py-3 rounded-xl hover:shadow-md transition text-base">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                    GitHub
+                </a>
+
+                <div class="flex items-center gap-2 bg-white border border-slate-200 px-6 py-3 rounded-xl text-base">
+                    <i data-lucide="mail" class="w-5 h-5 text-blue-600"></i>
+                    joehuang0705xx@gmail.com
+                </div>
+
+                <div class="flex items-center gap-2 bg-white border border-slate-200 px-6 py-3 rounded-xl text-base">
+                    <i data-lucide="phone" class="w-5 h-5 text-teal-600"></i>
+                    0908-319-190
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="grid md:grid-cols-2 gap-10 items-start">
+                <div>
+                    <h2 class="text-4xl font-bold mb-8 flex items-center gap-3">
+                        <i data-lucide="graduation-cap" class="text-blue-600 w-8 h-8"></i>
+                        學歷背景
+                    </h2>
+
+                    <div class="space-y-7">
+                        <div class="relative pl-6 border-l-2 border-blue-100">
+                            <h3 class="font-bold text-2xl text-slate-800">國立中正大學</h3>
+                            <p class="text-blue-600 font-medium text-lg">資訊管理醫療資訊管理學系碩士班</p>
+                        </div>
+
+                        <div class="relative pl-6 border-l-2 border-slate-100">
+                            <h3 class="font-bold text-2xl text-slate-800">大同大學</h3>
+                            <p class="text-slate-600 text-lg">資訊經營學系</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <h2 class="text-4xl font-bold mb-6 flex items-center gap-3">
+                            <i data-lucide="badge-check" class="text-teal-600 w-8 h-8"></i>
+                            證照
+                        </h2>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-base font-semibold">ERP
+                                規劃師</span>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <h2 class="text-3xl font-bold mb-5 text-slate-800">個人簡介</h2>
+                    <p class="text-lg text-slate-700 leading-9 mb-4">
+                        我目前就讀於國立中正大學資訊管理醫療資訊管理學系碩士班，學習歷程聚焦在
+                        AI 應用、資料分析與系統開發。相較於單一技術鑽研，我更擅長把不同工具整合起來，
+                        針對實際需求設計出可執行的解決方案。
+                    </p>
+                    <p class="text-lg text-slate-700 leading-9 mb-4">
+                        過去我曾參與醫療、銀行與學術研究相關專案，累積了從需求理解、資料整理、
+                        系統實作到成果呈現的完整經驗，也讓我逐步建立起跨領域合作與問題拆解能力。
+                    </p>
+                    <p class="text-lg text-slate-700 leading-9">
+                        我希望未來持續朝 AI 應用工程、資料分析與智慧系統整合方向發展，
+                        將研究與實作能力轉化成真正有落地價值的成果。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-16 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-5 text-center mb-12">
+            <h2 class="text-5xl font-bold mb-4">技能地圖</h2>
+            <p class="text-xl text-slate-500">從開發、資料處理到 AI 應用，逐步建立完整的技術基礎</p>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="glass-card p-8 rounded-3xl shadow-sm">
+                <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
+                    <i data-lucide="layout-panel-top" class="w-7 h-7"></i>
+                </div>
+                <h3 class="font-bold text-3xl mb-5">開發框架</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-base font-semibold">Spring
+                        Boot</span>
+                    <span class="bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-base font-semibold">Flask</span>
+                    <span class="bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-base font-semibold">ASP.NET Web
+                        Pages</span>
+                    <span class="bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-base font-semibold">Android
+                        Studio</span>
+                </div>
+            </div>
+
+            <div class="glass-card p-8 rounded-3xl shadow-sm">
+                <div class="w-16 h-16 bg-teal-100 text-teal-600 rounded-xl flex items-center justify-center mb-6">
+                    <i data-lucide="code-2" class="w-7 h-7"></i>
+                </div>
+                <h3 class="font-bold text-3xl mb-5">程式語言</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-teal-50 text-teal-700 px-4 py-2 rounded-full text-base font-semibold">Java</span>
+                    <span class="bg-teal-50 text-teal-700 px-4 py-2 rounded-full text-base font-semibold">Python</span>
+                    <span class="bg-teal-50 text-teal-700 px-4 py-2 rounded-full text-base font-semibold">SQL</span>
+                    <span class="bg-teal-50 text-teal-700 px-4 py-2 rounded-full text-base font-semibold">HTML / CSS /
+                        JavaScript</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projects -->
+    <section id="projects" class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="text-4xl font-bold mb-10 text-center">專案展示</h2>
+
+            <!-- 專案主題按鈕 -->
+            <div class="flex flex-wrap justify-center gap-3 mb-8">
+                <button class="project-tab active" data-project="0">生成式 AI—醫療問答微調專案</button>
+                <button class="project-tab" data-project="1">PI CAR 商品辨識推車</button>
+                <button class="project-tab" data-project="2">鐵路遺失物資料分析與 BI 視覺化專案</button>
+            </div>
+
+            <!-- 主卡片 -->
+            <div id="project-card"
+                class="group border border-slate-100 rounded-3xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition duration-500">
+
+                <div id="project-banner"
+                    class="h-60 flex items-center justify-center p-6 text-white overflow-hidden relative bg-slate-900">
+                    <div id="project-overlay" class="absolute inset-0 bg-blue-600/20 transition z-10"></div>
+
+                    <img id="project-image" src="" alt="project preview"
+                        class="hidden absolute inset-0 w-full h-full object-cover" />
+
+                    <i id="project-icon" data-lucide="brain-circuit"
+                        class="w-24 h-24 opacity-40 transition duration-500 z-20"></i>
+
+                    <span id="project-badge"
+                        class="absolute top-4 right-4 bg-blue-500 text-sm font-bold px-3 py-1 rounded-full z-20">
+                        個人專案
+                    </span>
+                </div>
+
+                <div class="p-8 md:p-10">
+                    <div class="flex items-start justify-between gap-4 mb-4">
+                        <h3 id="project-title" class="text-3xl font-bold">生成式 AI—醫療問答微調專案</h3>
+                        <span id="project-year" class="text-slate-400 text-sm whitespace-nowrap">2025</span>
+                    </div>
+
+                    <p id="project-desc" class="text-slate-600 mb-6 text-base leading-8">
+                        以 LoRA 將 Qwen-7B-Chat 遷移至中文醫療問答場景，建立資料清理、指令微調、模型訓練與評估流程，
+                        並設計較完整的推論與誤差分析管線。
+                    </p>
+
+                    <div id="project-tags" class="flex flex-wrap gap-2 mb-6"></div>
+
+                    <a id="project-link" href="https://github.com/joe0705abc/Train_model_lab1" target="_blank"
+                        class="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all text-lg">
+                        查看 GitHub
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Extra -->
+    <section id="research" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-8">
+            <div class="glass-card p-8 rounded-3xl">
+                <h2 class="text-3xl font-bold mb-5 flex items-center gap-3">
+                    <i data-lucide="presentation" class="text-blue-600"></i>
+                    研究與研討會
+                </h2>
+                <div class="space-y-4 text-slate-700">
+                    <div>
+                        <div class="text-base text-slate-500 mb-2">2025</div>
+                        <h3 class="font-bold text-xl">國際健康資訊管理研討會暨台灣長期照護管理研討會</h3>
+                        <h3 class="font-bold text-xl">Understanding the Moderating Effects of Decision Maker
+                            Characteristics on the
+                            Performance of COVID-19 Epidemic Information Systems Use: An Application of
+                            Task-Technology Fit Model</h3>
+                        <p class="text-base text-slate-600 mt-3 leading-8">
+                            協助教授研究 COVID-19 疫情資訊系統相關主題，並參與研討會報告與內容整理。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card p-8 rounded-3xl">
+                <h2 class="text-3xl font-bold mb-5 flex items-center gap-3">
+                    <i data-lucide="sparkles" class="text-teal-600"></i>
+                    其他經驗
+                </h2>
+                <ul class="space-y-4 text-slate-700 text-base leading-8">
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-teal-500 mt-1 shrink-0"></i>
+                        協助實驗室進行爬蟲作業，支援研究資料蒐集與整理流程
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-teal-500 mt-1 shrink-0"></i>
+                        參與學術研究資料整理與維護，協助提升研究資料管理效率
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-teal-500 mt-1 shrink-0"></i>
+                        維護中正大學大數據中心網站品質，支援網站內容與整體運作品質管理
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-slate-200 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-slate-500 text-base text-center md:text-left">
+                © 2026 黃皓暐 Hao-Wei Huang
+                <span class="block md:inline">｜ERP 規劃師</span>
+            </div>
+
+            <div class="flex gap-4">
+                <a href="https://github.com/joe0705abc" target="_blank"
+                    class="w-11 h-11 rounded-full bg-slate-100 flex items-center justify-center hover:bg-slate-200 transition">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
+                <a href="mailto:joehuang0705xx@gmail.com"
+                    class="w-11 h-11 rounded-full bg-slate-100 flex items-center justify-center hover:bg-slate-200 transition">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                </a>
+                <a href="tel:0908319190"
+                    class="w-11 h-11 rounded-full bg-slate-100 flex items-center justify-center hover:bg-slate-200 transition">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        const projects = [
+            {
+                title: "生成式 AI—醫療問答微調專案",
+                year: "2025",
+                badge: "個人專案",
+                badgeClass: "bg-blue-500",
+                bannerClass: "bg-slate-900",
+                overlayClass: "bg-blue-600/20",
+                icon: "brain-circuit",
+                image: "https://joe0705abc.github.io/Medical_Project_image.jpg",
+                desc: "以 LoRA 將 Qwen-7B-Chat 遷移至中文醫療問答場景，建立資料清理與指令微調流程。設計訓練與推論管線（tokenization、批次/記憶體配置、8/16-bit 量化），支援單機 GPU 執行。建立自動化評估（如 ROUGE/BLEU）與誤差分析，提出過擬合緩解與穩定性調參策略。",
+                tags: ["Python", "Qwen-7B-Chat", "LoRA", "ROUGE / BLEU"],
+                link: "https://github.com/joe0705abc/Train_model_lab1",
+                linkColor: "text-blue-600"
+            },
+            {
+                title: "PI CAR 商品辨識推車",
+                year: "2024",
+                badge: "大學專題",
+                badgeClass: "bg-teal-500",
+                bannerClass: "bg-teal-900",
+                overlayClass: "bg-teal-600/20",
+                icon: "shopping-cart",
+                image: "https://joe0705abc.github.io/University_Project_image.png",
+                desc: "使用 HTML 設計 PI CAR 系統前端頁面，並以 YOLOv5 訓練商品辨識模型，透過 Flask 建立輕量級 Web 架構將影像串流投放於網頁，同時串接 MySQL 資料庫管理商品與優惠資訊。",
+                tags: ["HTML", "YOLOv5", "Flask", "MySQL", "XAMPP"],
+                link: null,
+                linkColor: "text-teal-600"
+            },
+            {
+                title: "鐵路遺失物資料分析與 BI 視覺化專案",
+                year: "2025",
+                badge: "資料分析專案",
+                badgeClass: "bg-emerald-500",
+                bannerClass: "bg-emerald-900",
+                overlayClass: "bg-emerald-600/20",
+                icon: "bar-chart-3",
+                image: "https://joe0705abc.github.io/BI_project_image.png",
+                desc: "整理台鐵遺失物開放資料，執行資料清理、欄位標準化與時間/地點欄位解析，提升資料可分析性。導入 mDeBERTa-v3 多語模型進行 zero-shot 輔助分類，改善未命中規則資料的分類覆蓋率，使無法辨識類別由 1,859 筆降至 120 筆，已辨識類別資料量提升約 26.5%。製作 BI 視覺化報表，分析車站熱點、週期性遺失趨勢與區域差異，並以 Pareto 分析支援高風險站點的資源配置決策。",
+                tags: ["Python", "mDeBERTa-v3", "Zero-shot", "BI Dashboard", "Pareto Analysis"],
+                link: "https://github.com/joe0705abc/AI_Railway_Data",
+                linkColor: "text-emerald-600"
+            }
+        ];
+
+        const tabs = document.querySelectorAll(".project-tab");
+        const card = document.getElementById("project-card");
+        const titleEl = document.getElementById("project-title");
+        const yearEl = document.getElementById("project-year");
+        const descEl = document.getElementById("project-desc");
+        const badgeEl = document.getElementById("project-badge");
+        const bannerEl = document.getElementById("project-banner");
+        const overlayEl = document.getElementById("project-overlay");
+        const iconEl = document.getElementById("project-icon");
+        const imageEl = document.getElementById("project-image");
+        const tagsEl = document.getElementById("project-tags");
+        const linkEl = document.getElementById("project-link");
+
+        function showProjectImage(project) {
+            if (project.image) {
+                imageEl.src = project.image;
+                imageEl.alt = project.title;
+                imageEl.classList.remove("hidden");
+                iconEl.classList.add("hidden");
+
+                imageEl.onerror = () => {
+                    imageEl.src = "";
+                    imageEl.alt = "";
+                    imageEl.classList.add("hidden");
+                    iconEl.classList.remove("hidden");
+                    iconEl.setAttribute("data-lucide", project.icon);
+                    if (window.lucide) lucide.createIcons();
+                };
+            } else {
+                imageEl.onerror = null;
+                imageEl.src = "";
+                imageEl.alt = "";
+                imageEl.classList.add("hidden");
+                iconEl.classList.remove("hidden");
+                iconEl.setAttribute("data-lucide", project.icon);
+            }
+        }
+
+        function renderProject(index) {
+            const p = projects[index];
+            card.classList.add("switching");
+
+            setTimeout(() => {
+                titleEl.textContent = p.title;
+                yearEl.textContent = p.year;
+                descEl.textContent = p.desc;
+                badgeEl.textContent = p.badge;
+
+                bannerEl.className = `h-60 flex items-center justify-center p-6 text-white overflow-hidden relative ${p.bannerClass}`;
+                overlayEl.className = `absolute inset-0 transition z-10 ${p.overlayClass}`;
+                badgeEl.className = `absolute top-4 right-4 text-sm font-bold px-3 py-1 rounded-full z-20 ${p.badgeClass}`;
+
+                showProjectImage(p);
+
+                tagsEl.innerHTML = p.tags
+                    .map(tag => `<span class="text-xs font-bold tracking-widest uppercase text-slate-400">${tag}</span>`)
+                    .join("");
+
+                if (p.link) {
+                    linkEl.href = p.link;
+                    linkEl.target = "_blank";
+                    linkEl.rel = "noopener noreferrer";
+                    linkEl.style.display = "inline-flex";
+                    linkEl.className = `inline-flex items-center gap-2 font-semibold hover:gap-3 transition-all text-lg ${p.linkColor}`;
+                    linkEl.innerHTML = `
+                    查看 GitHub
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                `;
+                } else {
+                    linkEl.removeAttribute("href");
+                    linkEl.removeAttribute("target");
+                    linkEl.removeAttribute("rel");
+                    linkEl.style.display = "inline-flex";
+                    linkEl.className = "inline-flex items-center gap-2 text-slate-400 font-semibold text-lg cursor-default";
+                    linkEl.innerHTML = `
+                    專案未公開
+                    <i data-lucide="lock" class="w-5 h-5"></i>
+                `;
+                }
+
+                tabs.forEach(tab => tab.classList.remove("active"));
+                tabs[index].classList.add("active");
+
+                if (window.lucide) lucide.createIcons();
+
+                card.classList.remove("switching");
+            }, 180);
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                const index = Number(tab.dataset.project);
+                renderProject(index);
+            });
+        });
+
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+
+        renderProject(0);
+    </script>
+</body>
+
+</html>
