@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黃皓暐 Hao-Wei Huang | Portfolio</title>
+    <!-- 使用 Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide 圖示庫 -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #2dd4bf);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 antialiased">
+
+    <!-- 導覽列 -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <span class="text-xl font-bold tracking-tight text-slate-800">Hao-Wei<span
+                    class="text-blue-600">.</span></span>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-blue-600 transition">關於我</a>
+                <a href="#skills" class="hover:text-blue-600 transition">專業技能</a>
+                <a href="#projects" class="hover:text-blue-600 transition">專案展示</a>
+                <a href="#experience" class="hover:text-blue-600 transition">實習經歷</a>
+            </div>
+            <a href="mailto:joehuang0705xx@gmail.com"
+                class="bg-slate-900 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-slate-800 transition">聯絡我</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col items-center text-center">
+            <div class="w-32 h-32 rounded-full bg-gradient-to-tr from-blue-500 to-teal-400 p-1 mb-6">
+                <!-- 預留頭像位置，若有照片請將 src 改為檔名 -->
+                <div class="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
+                    <i data-lucide="user" class="w-16 h-16 text-slate-300"></i>
+                </div>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight">你好，我是 <span class="gradient-text">黃皓暐</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl">
+                中正大學醫療資管碩士生。專注於 <span class="font-semibold text-slate-800">LLM 模型微調</span> 與 <span
+                    class="font-semibold text-slate-800">全端開發</span>，熱衷於將 AI 技術轉化為實用的醫療與商業解決方案。
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://github.com/joe0705abc" target="_blank"
+                    class="flex items-center gap-2 bg-white border border-slate-200 px-5 py-2.5 rounded-xl hover:shadow-md transition">
+                    <i data-lucide="github" class="w-5 h-5"></i> GitHub
+                </a>
+                <div class="flex items-center gap-2 bg-white border border-slate-200 px-5 py-2.5 rounded-xl">
+                    <i data-lucide="mail" class="w-5 h-5 text-blue-600"></i> joehuang0705xx@gmail.com
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 關於我 / 教育背景 -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
+                        <i data-lucide="graduation-cap" class="text-blue-600"></i> 教育背景
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="relative pl-6 border-l-2 border-blue-100">
+                            <h3 class="font-bold text-lg text-slate-800">國立中正大學</h3>
+                            <p class="text-blue-600 font-medium">資訊管理醫療資訊管理學系碩士班</p>
+                            <p class="text-slate-500 text-sm">2024 - 現在</p>
+                        </div>
+                        <div class="relative pl-6 border-l-2 border-slate-100">
+                            <h3 class="font-bold text-lg text-slate-800">大同大學</h3>
+                            <p class="text-slate-600">資訊經營學系 學士</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <h2 class="text-2xl font-bold mb-4 text-slate-800">核心理念</h2>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        我重視「從實踐中學習」。在研究所期間，我參與多項跨領域專案，從基礎的網頁開發到尖端的生成式 AI 微調。
+                    </p>
+                    <ul class="space-y-2 text-slate-700">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2"
+                                class="w-4 h-4 text-teal-500"></i> 具備 Python 自動化擷取 (Selenium/BS4) 能力</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2"
+                                class="w-4 h-4 text-teal-500"></i> 熟悉容器化部署 (Docker/K8s)</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2"
+                                class="w-4 h-4 text-teal-500"></i> 豐富的跨團隊溝通與協作經驗</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技術棧 -->
+    <section id="skills" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">技術領域</h2>
+            <p class="text-slate-500">我的技術地圖涵蓋了從後端邏輯到 AI 模型訓練的完整流程</p>
+        </div>
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Backend -->
+            <div class="glass-card p-6 rounded-2xl shadow-sm">
+                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-4">
+                    <i data-lucide="server"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-4">後端與開發框架</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span
+                        class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">SpringBoot</span>
+                    <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Flask</span>
+                    <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">ASP.NET</span>
+                    <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Android
+                        Studio</span>
+                </div>
+            </div>
+            <!-- Languages -->
+            <div class="glass-card p-6 rounded-2xl shadow-sm">
+                <div class="w-12 h-12 bg-teal-100 text-teal-600 rounded-lg flex items-center justify-center mb-4">
+                    <i data-lucide="code-2"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-4">程式語言</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-teal-50 text-teal-700 px-3 py-1 rounded-full text-xs font-semibold">Python</span>
+                    <span class="bg-teal-50 text-teal-700 px-3 py-1 rounded-full text-xs font-semibold">Java</span>
+                    <span class="bg-teal-50 text-teal-700 px-3 py-1 rounded-full text-xs font-semibold">C#</span>
+                    <span class="bg-teal-50 text-teal-700 px-3 py-1 rounded-full text-xs font-semibold">SQL</span>
+                    <span
+                        class="bg-teal-50 text-teal-700 px-3 py-1 rounded-full text-xs font-semibold">JavaScript</span>
+                </div>
+            </div>
+            <!-- Tools -->
+            <div class="glass-card p-6 rounded-2xl shadow-sm">
+                <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mb-4">
+                    <i data-lucide="container"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-4">運維與自動化工具</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span
+                        class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs font-semibold">Docker</span>
+                    <span
+                        class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs font-semibold">Kubernetes</span>
+                    <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs font-semibold">Git</span>
+                    <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs font-semibold">Linux</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 專案展示 -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">精選專案</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- AI Project -->
+                <div
+                    class="group border border-slate-100 rounded-3xl overflow-hidden hover:shadow-xl transition duration-500">
+                    <div
+                        class="bg-slate-900 h-48 flex items-center justify-center p-6 text-white overflow-hidden relative">
+                        <div class="absolute inset-0 bg-blue-600/20 group-hover:bg-blue-600/10 transition"></div>
+                        <i data-lucide="brain-circuit"
+                            class="w-20 h-20 opacity-40 group-hover:scale-110 transition duration-500"></i>
+                        <span class="absolute top-4 right-4 bg-blue-500 text-xs font-bold px-3 py-1 rounded-full">LLM
+                            微調</span>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-3">生成式 AI — 醫療問答專案</h3>
+                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                            使用 LoRA 技術微調 Qwen-7B-Chat 遷移至醫療問答。實作包含 8-bit 量化、ROUGE/BLEU 評估指標，並支援單機 GPU 執行與記憶體優化。
+                        </p>
+                        <div class="flex gap-2 mb-6">
+                            <span class="text-[10px] font-bold tracking-widest uppercase text-slate-400">Python</span>
+                            <span
+                                class="text-[10px] font-bold tracking-widest uppercase text-slate-400">HuggingFace</span>
+                            <span class="text-[10px] font-bold tracking-widest uppercase text-slate-400">PyTorch</span>
+                        </div>
+                        <a href="https://github.com/joe0705abc/Train_model_labl" target="_blank"
+                            class="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all">
+                            查看技術文件 <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Web Project -->
+                <div
+                    class="group border border-slate-100 rounded-3xl overflow-hidden hover:shadow-xl transition duration-500">
+                    <div
+                        class="bg-teal-900 h-48 flex items-center justify-center p-6 text-white overflow-hidden relative">
+                        <div class="absolute inset-0 bg-teal-600/20 group-hover:bg-teal-600/10 transition"></div>
+                        <i data-lucide="shopping-cart"
+                            class="w-20 h-20 opacity-40 group-hover:scale-110 transition duration-500"></i>
+                        <span
+                            class="absolute top-4 right-4 bg-teal-500 text-xs font-bold px-3 py-1 rounded-full">電腦視覺</span>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-3">PI CAR 商品辨識推車</h3>
+                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                            整合 YOLOv5 進行動態商品辨識，並利用 Flask 架設輕量化 Web 框架進行串流展示，後端結合 MySQL 處理即時庫存與優惠資訊。
+                        </p>
+                        <div class="flex gap-2 mb-6">
+                            <span class="text-[10px] font-bold tracking-widest uppercase text-slate-400">YOLOv5</span>
+                            <span class="text-[10px] font-bold tracking-widest uppercase text-slate-400">Flask</span>
+                            <span class="text-[10px] font-bold tracking-widest uppercase text-slate-400">MySQL</span>
+                        </div>
+                        <div class="text-slate-400 text-xs">University Project</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 實習經歷 -->
+    <section id="experience" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">實習經歷</h2>
+            <div class="space-y-12">
+                <!-- 聖馬爾定 -->
+                <div
+                    class="flex flex-col md:flex-row gap-6 md:gap-12 items-start relative pb-12 border-b border-slate-800 last:border-0">
+                    <div class="md:w-1/4">
+                        <div class="text-blue-400 font-bold">2025.07 - 08</div>
+                        <div class="text-sm text-slate-400">嘉義聖馬爾定醫院</div>
+                    </div>
+                    <div class="md:w-3/4">
+                        <h3 class="text-xl font-bold mb-3">人工智慧發展中心 實習生</h3>
+                        <ul class="space-y-3 text-slate-400 text-sm">
+                            <li class="flex items-start gap-3"><i data-lucide="zap"
+                                    class="w-4 h-4 mt-0.5 text-blue-500 shrink-0"></i> 採用 ASP.NET Web Pages 與 SQL Server
+                                開發院內網站，優化內部流程。</li>
+                            <li class="flex items-start gap-3"><i data-lucide="zap"
+                                    class="w-4 h-4 mt-0.5 text-blue-500 shrink-0"></i> 實作 MaiAgent 建置 RAG (檢索增強生成) AI
+                                醫療助理。</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 台企銀 -->
+                <div class="flex flex-col md:flex-row gap-6 md:gap-12 items-start">
+                    <div class="md:w-1/4">
+                        <div class="text-teal-400 font-bold">2024.02 - 04</div>
+                        <div class="text-sm text-slate-400">台灣中小企業銀行</div>
+                    </div>
+                    <div class="md:w-3/4">
+                        <h3 class="text-xl font-bold mb-3">資訊部門 實習生</h3>
+                        <ul class="space-y-3 text-slate-400 text-sm">
+                            <li class="flex items-start gap-3"><i data-lucide="zap"
+                                    class="w-4 h-4 mt-0.5 text-teal-500 shrink-0"></i> 學習核心櫃員系統、主機電文溝通方式，並建立行員畫面查詢系統。
+                            </li>
+                            <li class="flex items-start gap-3"><i data-lucide="zap"
+                                    class="w-4 h-4 mt-0.5 text-teal-500 shrink-0"></i> 實習 Spring Boot 語法、Docker
+                                容器化部署、K8s 與 Linux 指令應用。</li>
+                            <li class="flex items-start gap-3"><i data-lucide="zap"
+                                    class="w-4 h-4 mt-0.5 text-teal-500 shrink-0"></i> 實作資料倉儲視覺化，應用於銀行數據集市分析。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="py-12 border-t border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-slate-500 text-sm">
+                © 2026 黃皓暐 Hao-Wei Huang.
+                <span class="block md:inline">ERP 規劃師 | TOEIC 505</span>
+            </div>
+            <div class="flex gap-4">
+                <a href="https://github.com/joe0705abc"
+                    class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hover:bg-slate-200 transition">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
+                <a href="mailto:joehuang0705xx@gmail.com"
+                    class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hover:bg-slate-200 transition">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 初始化 Lucide 圖示
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
